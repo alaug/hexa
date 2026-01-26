@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hexa</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Screens container -->
+        <div id="screens">
+            <!-- Home Screen -->
+            <div id="home-screen" class="screen active">
+                <!-- Decorative hexagon clusters -->
+                <svg class="hex-cluster cluster-top-left" viewBox="0 0 100 115" width="80" height="92">
+                    <polygon points="25,0 40,8.5 40,25.5 25,34 10,25.5 10,8.5" fill="#8ecfc6"/>
+                    <polygon points="55,0 70,8.5 70,25.5 55,34 40,25.5 40,8.5" fill="#8ecfc6"/>
+                    <polygon points="10,27 25,35.5 25,52.5 10,61 -5,52.5 -5,35.5" fill="#8ecfc6"/>
+                    <polygon points="40,27 55,35.5 55,52.5 40,61 25,52.5 25,35.5" fill="#8ecfc6"/>
+                    <polygon points="70,27 85,35.5 85,52.5 70,61 55,52.5 55,35.5" fill="#8ecfc6"/>
+                    <polygon points="25,54 40,62.5 40,79.5 25,88 10,79.5 10,62.5" fill="#8ecfc6"/>
+                    <polygon points="55,54 70,62.5 70,79.5 55,88 40,79.5 40,62.5" fill="#8ecfc6"/>
+                </svg>
+
+                <svg class="hex-cluster cluster-top-right" viewBox="0 0 85 100" width="85" height="100">
+                    <polygon points="42.5,0 57.5,8.5 57.5,25.5 42.5,34 27.5,25.5 27.5,8.5" fill="#8ecfc6"/>
+                    <polygon points="60,27 75,35.5 75,52.5 60,61 45,52.5 45,35.5" fill="#8ecfc6"/>
+                    <polygon points="25,27 40,35.5 40,52.5 25,61 10,52.5 10,35.5" fill="#8ecfc6"/>
+                    <polygon points="42.5,54 57.5,62.5 57.5,79.5 42.5,88 27.5,79.5 27.5,62.5" fill="#8ecfc6"/>
+                </svg>
+
+                <svg class="hex-cluster cluster-bottom-left" viewBox="0 0 100 115" width="120" height="138">
+                    <polygon points="25,0 40,8.5 40,25.5 25,34 10,25.5 10,8.5" fill="#8ecfc6"/>
+                    <polygon points="55,0 70,8.5 70,25.5 55,34 40,25.5 40,8.5" fill="#8ecfc6"/>
+                    <polygon points="10,27 25,35.5 25,52.5 10,61 -5,52.5 -5,35.5" fill="#8ecfc6"/>
+                    <polygon points="40,27 55,35.5 55,52.5 40,61 25,52.5 25,35.5" fill="#8ecfc6"/>
+                    <polygon points="70,27 85,35.5 85,52.5 70,61 55,52.5 55,35.5" fill="#8ecfc6"/>
+                    <polygon points="25,54 40,62.5 40,79.5 25,88 10,79.5 10,62.5" fill="#8ecfc6"/>
+                    <polygon points="55,54 70,62.5 70,79.5 55,88 40,79.5 40,62.5" fill="#8ecfc6"/>
+                </svg>
+
+                <div class="logo-container">
+                    <svg class="hex-icon" viewBox="0 0 100 100" width="50" height="50">
+                        <!-- White filled hexagon with green outline -->
+                        <polygon points="50,5 95,27.5 95,72.5 50,95 5,72.5 5,27.5" fill="white" stroke="#2a9d8f" stroke-width="5"/>
+                        <!-- Green filled section covering top portion, bottom edge parallel to top edges -->
+                        <polygon points="50,5 95,27.5 95,50 27.5,16.25" fill="#2a9d8f"/>
+                    </svg>
+                    <h1 class="title">Hexa</h1>
+                </div>
+                
+                <nav class="menu">
+                    <div class="menu-item" data-screen="play">
+                        <span>Play</span>
+                    </div>
+                    <div class="menu-item" data-screen="stats">
+                        <span>Stats</span>
+                    </div>
+                    <div class="menu-item" data-screen="tutorial">
+                        <span>Tutorial</span>
+                    </div>
+                    <div class="menu-item" data-screen="more">
+                        <span>More</span>
+                    </div>
+                </nav>
+            </div>
+
+            <!-- Play Screen -->
+            <div id="play-screen" class="screen">
+                <!-- Game Header -->
+                <div class="game-header">
+                    <button class="back-btn game-back" data-screen="home">
+                        <svg viewBox="0 0 24 24" width="24" height="24">
+                            <path fill="currentColor" d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+                        </svg>
+                    </button>
+                    <div class="game-stat">
+                        <span class="stat-label">Time</span>
+                        <span class="stat-value" id="game-time">18</span>
+                    </div>
+                    <div class="pattern-indicator">
+                        <svg viewBox="0 0 100 100" width="80" height="80">
+                            <!-- Pattern hexagons - 7 hex flower pattern -->
+                            <polygon id="pattern-0" class="pattern-hex" points="50,8 62,15 62,29 50,36 38,29 38,15" fill="none" stroke="#333" stroke-width="1.5"/>
+                            <polygon id="pattern-1" class="pattern-hex" points="68,22 80,29 80,43 68,50 56,43 56,29" fill="none" stroke="#333" stroke-width="1.5"/>
+                            <polygon id="pattern-2" class="pattern-hex" points="68,50 80,57 80,71 68,78 56,71 56,57" fill="none" stroke="#333" stroke-width="1.5"/>
+                            <polygon id="pattern-3" class="pattern-hex" points="50,64 62,71 62,85 50,92 38,85 38,71" fill="none" stroke="#333" stroke-width="1.5"/>
+                            <polygon id="pattern-4" class="pattern-hex" points="32,50 44,57 44,71 32,78 20,71 20,57" fill="none" stroke="#333" stroke-width="1.5"/>
+                            <polygon id="pattern-5" class="pattern-hex" points="32,22 44,29 44,43 32,50 20,43 20,29" fill="none" stroke="#333" stroke-width="1.5"/>
+                            <polygon id="pattern-6" class="pattern-hex" points="50,36 62,43 62,57 50,64 38,57 38,43" fill="none" stroke="#333" stroke-width="1.5"/>
+                        </svg>
+                    </div>
+                    <div class="game-stat">
+                        <span class="stat-label">Score</span>
+                        <span class="stat-value" id="game-score">0</span>
+                    </div>
+                </div>
+
+                <!-- Game Board -->
+                <div class="game-board-container">
+                    <div class="game-board">
+                        <!-- Row 1: 2 hexagons -->
+                        <div class="hex-row">
+                            <div class="hex-cell" data-index="0" data-color="orange"></div>
+                            <div class="hex-cell" data-index="1" data-color="green"></div>
+                        </div>
+                        <!-- Row 2: 3 hexagons -->
+                        <div class="hex-row">
+                            <div class="hex-cell" data-index="2" data-color="green"></div>
+                            <div class="hex-cell" data-index="3" data-color="orange"></div>
+                            <div class="hex-cell" data-index="4" data-color="blue"></div>
+                        </div>
+                        <!-- Row 3: 2 hexagons -->
+                        <div class="hex-row">
+                            <div class="hex-cell" data-index="5" data-color="purple"></div>
+                            <div class="hex-cell" data-index="6" data-color="purple"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Game Footer with Power-ups -->
+                <div class="game-footer">
+                    <div class="power-up" data-type="time">
+                        <span class="power-label">+Time</span>
+                        <span class="power-count" id="power-time">5</span>
+                    </div>
+                    <div class="power-divider"></div>
+                    <div class="power-up" data-type="skip">
+                        <span class="power-label">Skips</span>
+                        <span class="power-count" id="power-skips">5</span>
+                    </div>
+                    <div class="power-divider"></div>
+                    <div class="power-up" data-type="thaw">
+                        <span class="power-label">Thaws</span>
+                        <span class="power-count" id="power-thaws">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Screen -->
+            <div id="stats-screen" class="screen">
+                <header class="screen-header">
+                    <button class="back-btn" data-screen="home">
+                        <svg viewBox="0 0 24 24" width="24" height="24">
+                            <path fill="currentColor" d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+                        </svg>
+                    </button>
+                    <h2>Stats</h2>
+                </header>
+                <div class="screen-content">
+                    <div class="stats-container">
+                        <div class="stat-card">
+                            <div class="stat-value">0</div>
+                            <div class="stat-label">Games Played</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">0</div>
+                            <div class="stat-label">High Score</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">0</div>
+                            <div class="stat-label">Total Score</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">0%</div>
+                            <div class="stat-label">Win Rate</div>
+                        </div>
+                        <div class="stat-card wide">
+                            <div class="stat-value">--:--</div>
+                            <div class="stat-label">Best Time</div>
+                        </div>
+                        <div class="stat-card wide">
+                            <div class="stat-value">0</div>
+                            <div class="stat-label">Current Streak</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tutorial Screen -->
+            <div id="tutorial-screen" class="screen">
+                <header class="screen-header">
+                    <button class="back-btn" data-screen="home">
+                        <svg viewBox="0 0 24 24" width="24" height="24">
+                            <path fill="currentColor" d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+                        </svg>
+                    </button>
+                    <h2>Tutorial</h2>
+                </header>
+                <div class="screen-content">
+                    <div class="tutorial-container">
+                        <div class="tutorial-step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h3>Understand the Grid</h3>
+                                <p>Hexa is played on a hexagonal grid. Each cell connects to six neighboring cells.</p>
+                                <div class="tutorial-visual">
+                                    <svg viewBox="0 0 150 130" width="150" height="130">
+                                        <polygon points="75,10 110,30 110,70 75,90 40,70 40,30" fill="#2a9d8f" opacity="0.3" stroke="#2a9d8f" stroke-width="2"/>
+                                        <polygon points="40,70 75,90 75,130 40,130 5,110 5,70" fill="#2a9d8f" opacity="0.2" stroke="#2a9d8f" stroke-width="2"/>
+                                        <polygon points="110,70 145,90 145,130 110,130 75,110 75,70" fill="#2a9d8f" opacity="0.2" stroke="#2a9d8f" stroke-width="2"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tutorial-step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h3>Place Your Pieces</h3>
+                                <p>Drag and drop hexagonal pieces onto the grid. Pieces must fit within the board boundaries.</p>
+                            </div>
+                        </div>
+                        <div class="tutorial-step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h3>Clear Lines</h3>
+                                <p>Complete full lines in any of the three directions to clear them and score points.</p>
+                            </div>
+                        </div>
+                        <div class="tutorial-step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h3>Keep Playing</h3>
+                                <p>The game ends when you can no longer place any pieces. Try to achieve the highest score!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- More Screen -->
+            <div id="more-screen" class="screen">
+                <header class="screen-header">
+                    <button class="back-btn" data-screen="home">
+                        <svg viewBox="0 0 24 24" width="24" height="24">
+                            <path fill="currentColor" d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+                        </svg>
+                    </button>
+                    <h2>MORE</h2>
+                </header>
+                <div class="screen-content">
+                    <!-- Tabs -->
+                    <div class="more-tabs">
+                        <button class="more-tab active" data-tab="settings">settings</button>
+                        <button class="more-tab" data-tab="about">about</button>
+                    </div>
+
+                    <!-- Settings Tab Content -->
+                    <div id="settings-tab" class="tab-content active">
+                        <div class="settings-section">
+                            <h3 class="section-title">theme</h3>
+                            <div class="theme-options">
+                                <div class="theme-option selected" data-theme="0">
+                                    <div class="theme-preview">
+                                        <div class="theme-color" style="background: #F7931E;"></div>
+                                        <div class="theme-color" style="background: #8CC63F;"></div>
+                                        <div class="theme-color" style="background: #29ABE2;"></div>
+                                        <div class="theme-color" style="background: #7B8CDE;"></div>
+                                    </div>
+                                    <div class="theme-radio selected"></div>
+                                </div>
+                                <div class="theme-option" data-theme="1">
+                                    <div class="theme-preview">
+                                        <div class="theme-color" style="background: #F5A623;"></div>
+                                        <div class="theme-color" style="background: #7ED4D1;"></div>
+                                        <div class="theme-color" style="background: #EC8C99;"></div>
+                                        <div class="theme-color" style="background: #8FD47E;"></div>
+                                    </div>
+                                    <div class="theme-radio"></div>
+                                </div>
+                                <div class="theme-option" data-theme="2">
+                                    <div class="theme-preview">
+                                        <div class="theme-color" style="background: #6B9370;"></div>
+                                        <div class="theme-color" style="background: #B5D4A1;"></div>
+                                        <div class="theme-color" style="background: #A8CEE2;"></div>
+                                        <div class="theme-color" style="background: #D4C89E;"></div>
+                                    </div>
+                                    <div class="theme-radio"></div>
+                                </div>
+                                <div class="theme-option" data-theme="3">
+                                    <div class="theme-preview">
+                                        <div class="theme-color" style="background: #2D3436;"></div>
+                                        <div class="theme-color" style="background: #4A5F8C;"></div>
+                                        <div class="theme-color" style="background: #B8C5E0;"></div>
+                                        <div class="theme-color" style="background: #F4E63D;"></div>
+                                    </div>
+                                    <div class="theme-radio"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- About Tab Content -->
+                    <div id="about-tab" class="tab-content">
+                        <div class="about-section">
+                            <div class="about-item">
+                                <span class="about-label">created by:</span>
+                                <span class="about-value">Austin Laugesen</span>
+                            </div>
+                            <div class="about-item">
+                                <span class="about-label">email:</span>
+                                <span class="about-value">alaug@outlook.com</span>
+                            </div>
+                            <div class="about-item">
+                                <span class="about-label">version:</span>
+                                <span class="about-value">1.2026.01.25</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
