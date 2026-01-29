@@ -139,7 +139,7 @@ body {
     transition: all 0.2s ease;
     width: 100%;
     max-width: 200px;
-    border: 0.65px solid #555;
+    border: 0.01px solid #555;
     border-radius: 8px;
     background: transparent;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
