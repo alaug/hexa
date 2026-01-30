@@ -105,8 +105,7 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-bottom: 120px;
-    margin-top: 60px;
+    margin-top: cacl(20px - 10vh);
 }
 
 .hex-icon {
@@ -837,7 +836,7 @@ body {
     }
     
     .logo-container {
-        margin-bottom: 80px;
+        margin-bottom: 50px;
     }
 
     .hex-cell {

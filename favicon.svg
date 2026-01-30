@@ -23,9 +23,9 @@
      inkscape:pageopacity="0.0"
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
-     inkscape:zoom="6.5926634"
-     inkscape:cx="64.010548"
-     inkscape:cy="47.021967"
+     inkscape:zoom="5.1635326"
+     inkscape:cx="49.578461"
+     inkscape:cy="37.764843"
      inkscape:window-width="1368"
      inkscape:window-height="842"
      inkscape:window-x="-6"
@@ -33,14 +33,14 @@
      inkscape:window-maximized="1"
      inkscape:current-layer="svg2" />
   <path
-     d="M 50,5 11.0289,27.5 v 45 L 50,95 88.9711,72.5 v -45 z m 0,8.6603 31.4711,18.165 V 68.1747 L 50,86.3397 18.5289,68.1747 V 31.8253 Z"
-     fill="#008577"
-     id="path1"
-     style="display:inline" />
-  <path
-     d="M 49.834437,13.278146 81.851895,31.307947 81.471818,49.94502 34.844258,22.223884"
+     d="M 49.834437,13.278146 81.851895,31.307947 81.814174,50.081962 34.844258,22.223884"
      fill="#008577"
      id="path2"
      sodipodi:nodetypes="cccc"
+     style="display:inline" />
+  <path
+     d="M 50,5 11.0289,27.5 v 45 L 50,95 88.9711,72.5 v -45 z m 0,8.6603 31.4711,18.165 V 68.1747 L 50,86.3397 18.5289,68.1747 V 31.8253 Z"
+     fill="#008577"
+     id="path1"
      style="display:inline" />
 </svg>
