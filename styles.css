@@ -160,7 +160,6 @@ body {
     font-size: 18px;
     font-weight: 500;
     color: var(--text-color);
-    text-transform: lowercase;
     letter-spacing: 0.5px;
 }
 
