@@ -487,13 +487,13 @@ body {
 
 .theme-preview {
     display: flex;
-    gap: 8px;
+    gap: 4px;
 }
 
 .theme-color {
     width: 30px;
-    height: 30px;
-    border-radius: 6px;
+    height: 34px;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 }
 
 .theme-radio {
